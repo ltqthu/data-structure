@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <stack>
 using namespace std;
 
 struct ListNode {
@@ -11,6 +12,7 @@ struct ListNode {
 };
 
 ListNode* Create(vector<int> vec) {
+    cout << "创建链表：" << endl;
     ListNode* pHead = new ListNode();
     ListNode* pMove = pHead;
     if (vec.empty()) {
@@ -27,6 +29,7 @@ ListNode* Create(vector<int> vec) {
 }
 
 void PrintLinkedList(ListNode* pHead) {
+    cout << "打印链表：" << endl;
     ListNode* pMove = pHead;
     while (pMove != nullptr) {
         cout << "val: " << pMove->val << endl;
@@ -45,6 +48,7 @@ int Length(ListNode* pHead) {
 }
 
 bool Insert(ListNode* pHead, int pos, int value) {
+    cout << "在链表第" << pos << "个位置插入" << value << endl;
     pos--;
     if (pos>Length(pHead)) {
         return false;
@@ -59,6 +63,34 @@ bool Insert(ListNode* pHead, int pos, int value) {
     return true;
 }
 
+bool Remove(ListNode* pHead, int pos) {
+    cout << "删除第" << pos << "个位置的元素" << endl;
+    pos--;
+    if (pos>Length(pHead)) {
+        return false;
+    }
+    ListNode* pMove = pHead;
+    for (int i=0; i<pos; i++) {
+        pMove = pMove->next;
+    }
+    pMove->next = pMove->next->next;
+}
+
+
+void PrintReversedList(ListNode* pHead) {
+    cout << "逆序打印链表：" << endl;
+    stack<int> stack_value;
+    ListNode* pMove = pHead;
+    while (pMove != nullptr) {
+        stack_value.push(pMove->val);
+        pMove = pMove->next;
+    }
+    while (!stack_value.empty()) {
+        cout << "val: " << stack_value.top() << endl;
+        stack_value.pop();
+    }
+}
+
 int main() {
     vector<int> vec{1,2,3,4,6};
     ListNode* pHead = Create(vec);
@@ -66,6 +98,10 @@ int main() {
     cout << Length(pHead) << endl;
     Insert(pHead, 4, 5);
     PrintLinkedList(pHead);
+    Remove(pHead, 4);
+    PrintLinkedList(pHead);
+
+    PrintReversedList(pHead);
 
     return 0;
 }
