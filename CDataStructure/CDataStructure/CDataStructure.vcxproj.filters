@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="SingleLinkedList">
+      <UniqueIdentifier>{b9fb2805-8488-4e31-a786-e263d287c688}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DoubleLinkedList">
+      <UniqueIdentifier>{c8ccecfe-7853-4749-8135-958e62299b84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Queue">
+      <UniqueIdentifier>{b52d91d2-009e-4577-b302-beb4314e816b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stack">
+      <UniqueIdentifier>{543ec9c5-9b9c-4603-8475-664887830d4e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SingleLinkedList.h">
+      <Filter>SingleLinkedList</Filter>
+    </ClInclude>
+    <ClInclude Include="DoubleLinkedList.h">
+      <Filter>DoubleLinkedList</Filter>
+    </ClInclude>
+    <ClInclude Include="Stack.h">
+      <Filter>Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="Queue.h">
+      <Filter>Queue</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SingleLinkedList.c">
+      <Filter>SingleLinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="DoubleLinkedList.c">
+      <Filter>DoubleLinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="Stack.c">
+      <Filter>Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="Queue.c">
+      <Filter>Queue</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
